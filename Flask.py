@@ -46,6 +46,32 @@ df = pd.DataFrame(data=d)
 plt.plot(df['x'], df['y'])
 plt.show()
     
-
-
+print ("Bienvenido al programa que mostrará la trayectoria de una partícula")
+opcion = 0
+while opcion != "4":
+    print ("------ MENÚ DE OPCIONES ------")
+    print ("1. Velocidad inicial de la particula")
+    print ("2. Intensidad de campo eléctrico")
+    print ("3. Tipo de partícula")
+    print ("4. Salir")
+    opcion = input("Elija los parámetros que desea ingresar: ")
+    
+    if opcion == '1':
+        magni = input("Ingrese la magnitud de la velocidad: ")
+        direc = input("Ingrese la dirección de la velocidad: ")
+        
+    elif opcion == '2':
+        magnit = input("Ingrese la magnitud del campo eléctrico: ")
+        senti = input("Ingrese el sentido del campo eléctrico: ")
+        
+    elif opcion == '3':
+        print("1. Electrón \n2. Positrón \n3. Protón \n4. Neutrón \n5. Partícula alfa")
+        print("6. Núclo de deuterio \n7. Muón\n8. Gravitón \n9. Fotón\n10. Átomo de calcio")
+        opcion2 = input("Elija el tipo de partícula")
+        
+    elif opcion == '4':
+        print("Feliz día")
+        
+    elif opcion >= '5':
+        print('Opción inválida')
 
