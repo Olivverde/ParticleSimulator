@@ -2,8 +2,11 @@
 {% block content %}
 
 	{% from "_macro.html" import render_field %}
-	<form>{{ render_field(form.Vp) }}</form>
-	<form>{{ render_field(form.Ang) }}</form>
-	<form>{{ render_field(form.Field) }}</form>
-	<form>{{ render_field(form.particle) }}</form>
+	<form name="sentMessage" id="contactForm" method="POST">
+		{{ render_field(form.Vp) }}
+		{{ render_field(form.Ang) }}
+		{{ render_field(form.Field) }}
+		{{ render_field(form.particle) }}
+		<button type="submit">Send</button>
+	</form>
 {% endblock  %}
