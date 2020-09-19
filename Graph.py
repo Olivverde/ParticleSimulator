@@ -10,7 +10,7 @@ from matplotlib.figure import Figure
 
 
 
-def graph(vel, ang, field):
+def graph(vel, ang, field, url):
 	xAxis = []
 	yAxis= []
 	
@@ -18,7 +18,7 @@ def graph(vel, ang, field):
 	#Angulo
 	Ang = ang
 	#Radianes
-	rad = (Ang*math.pi)/180
+	rad = math.radians(Ang)
 	#Vel prueba
 	Vp = vel
 	#Vel x
@@ -46,8 +46,9 @@ def graph(vel, ang, field):
 	    yAxis.append(currentH)
 	d = {'x':xAxis,'y':yAxis}
 	df = pd.DataFrame(data=d)
+	print(df)
 	plt.plot(df['x'], df['y'])
-	plt.savefig('static/new_plot.png')
+	plt.savefig(url)
 	plt.close()
 
 		
