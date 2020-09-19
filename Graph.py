@@ -10,10 +10,14 @@ from matplotlib.figure import Figure
 
 
 
-def graph(vel, ang, field, url):
+def graph(vel, ang, field, width, particle, url):
 	xAxis = []
 	yAxis= []
 	
+	particles = {'electron':[(-1.60e-19),9.1e-31],'positron':[1.60e-19,9.1e-31],'proton':[1.60e-19,1.67e-27],
+				'tau':[(-1.60e-19),3.16e-27],'antitau':[1.60e-19,3.16e-27],'alpha':[3.2e-19,6.64e-27],
+				'deuteron':[1.60e-19,3.34e-27],'muon':[(-1.60e-19),1.88e-25],'antimuon':[1.60e-19,1.88e-25],
+				'delta':[3.20e-19,2.19e-24]}
 
 	#Angulo
 	Ang = ang
@@ -28,11 +32,11 @@ def graph(vel, ang, field, url):
 	#CampoE
 	Campo = field
 	#Masa Particula
-	masaP = 1.67e-27
+	masaP = particles[particle][1]
 	#Carga Particula
-	qP = 1.60e-19
+	qP = particles[particle][0]
 	#Elevacion maxima
-	hMax = 1e+01
+	hMax = width
 	t = 0e+0
 	currentH = 0e+0
 	currentX = 0e+0
@@ -41,7 +45,7 @@ def graph(vel, ang, field, url):
 	    a = (qP*Campo)/masaP
 	    currentH = Vy*t+(0.5)*a*(t**2)
 	    currentX = Vx*t
-	    t += 1e-3
+	    t += 1e-4
 	    xAxis.append(currentX)
 	    yAxis.append(currentH)
 	d = {'x':xAxis,'y':yAxis}
@@ -50,9 +54,3 @@ def graph(vel, ang, field, url):
 	plt.plot(df['x'], df['y'])
 	plt.savefig(url)
 	plt.close()
-
-		
-    
-
-
-
