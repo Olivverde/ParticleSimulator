@@ -2,13 +2,22 @@
 {% block content %}
 
 	{% from "_macro.html" import render_field %}
-	<form name="sentMessage" id="contactForm" method="POST">
+	<form name="sentMessage" id="contactForm" method="POST" align = "center">
+		<br></br>
 		{{ render_field(form.Vp) }}
+		<br></br>
 		{{ render_field(form.Ang) }}
+		<br></br>
 		{{ render_field(form.Field) }}
+		<br></br>
 		{{ render_field(form.Width) }}
+		<br></br>
 		{{ render_field(form.particle) }}
-		<button type="submit">Send</button>
+		<button type="submit" style="margin-left: 10px">Send</button>
 	</form>
-	<img src={{ _url }} alt="Chart" >
+	<br></br>
+	<div align ="center">
+		<img src={{ _url }} alt="Chart">
+	</div>
+	
 {% endblock  %}

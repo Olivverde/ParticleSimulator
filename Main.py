@@ -1,8 +1,9 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-import io
+import os
 import forms
+from shutil import rmtree
 import Graph
 from os import remove
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -30,4 +31,10 @@ def index():
 			particle_form.Width.data ,particle_form.particle.data, url)
 	return render_template('index.html', form = particle_form, _url = url)
 if __name__ == '__main__':
-    app.run(debug = True)	
+	if os.path.isdir('static'):
+		rmtree('static')
+		os.mkdir('static')
+	elif (os.path.isdir('static')) != True:
+		os.mkdir('static')
+
+	app.run(debug = True)	
