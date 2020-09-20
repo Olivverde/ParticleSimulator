@@ -2,7 +2,7 @@
 {% block content %}
 
 	{% from "_macro.html" import render_field %}
-	<form name="sentMessage" id="contactForm" method="POST" align = "center">
+	<b><form name="sentMessage" id="contactForm" method="POST" align = "center">
 		<br></br>
 		{{ render_field(form.Vp) }}
 		<br></br>
@@ -14,7 +14,7 @@
 		<br></br>
 		{{ render_field(form.particle) }}
 		<button type="submit" style="margin-left: 10px">Send</button>
-	</form>
+	</form></b>
 	<br></br>
 	<div align ="center">
 		<img src={{ _url }} alt="Chart">
