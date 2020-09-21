@@ -1,13 +1,15 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-import os
-import forms
 from shutil import rmtree
-import Graph
 from os import remove
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
+import os
+import forms
+import Graph
+
+
 
 number = 0
 url = ''
